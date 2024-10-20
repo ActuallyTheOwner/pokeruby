@@ -11,19 +11,19 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "direction": "up",
+      "map": "MAP_RUSTBORO_CITY",
       "offset": 0,
-      "map": "MAP_RUSTBORO_CITY"
+      "direction": "up"
     },
     {
-      "direction": "down",
+      "map": "MAP_ROUTE105",
       "offset": 0,
-      "map": "MAP_ROUTE105"
+      "direction": "down"
     },
     {
-      "direction": "right",
+      "map": "MAP_PETALBURG_CITY",
       "offset": 50,
-      "map": "MAP_PETALBURG_CITY"
+      "direction": "right"
     }
   ],
   "object_events": [
@@ -502,7 +502,9 @@
       "dest_warp_id": "5"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+
+  ],
   "bg_events": [
     {
       "type": "sign",

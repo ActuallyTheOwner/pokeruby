@@ -11,14 +11,14 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "direction": "left",
+      "map": "MAP_ROUTE131",
       "offset": 0,
-      "map": "MAP_ROUTE131"
+      "direction": "left"
     },
     {
-      "direction": "right",
+      "map": "MAP_ROUTE129",
       "offset": 0,
-      "map": "MAP_ROUTE129"
+      "direction": "right"
     }
   ],
   "object_events": [
@@ -62,7 +62,13 @@
       "flag": "FLAG_TEMP_11"
     }
   ],
-  "warp_events": [],
-  "coord_events": [],
-  "bg_events": []
+  "warp_events": [
+
+  ],
+  "coord_events": [
+
+  ],
+  "bg_events": [
+
+  ]
 }

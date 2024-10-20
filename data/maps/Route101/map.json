@@ -11,14 +11,14 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "direction": "up",
+      "map": "MAP_OLDALE_TOWN",
       "offset": 0,
-      "map": "MAP_OLDALE_TOWN"
+      "direction": "up"
     },
     {
-      "direction": "down",
+      "map": "MAP_LITTLEROOT_TOWN",
       "offset": 0,
-      "map": "MAP_LITTLEROOT_TOWN"
+      "direction": "down"
     }
   ],
   "object_events": [
@@ -101,7 +101,9 @@
       "flag": "FLAG_HIDE_BOY_ROUTE101"
     }
   ],
-  "warp_events": [],
+  "warp_events": [
+
+  ],
   "coord_events": [
     {
       "type": "trigger",

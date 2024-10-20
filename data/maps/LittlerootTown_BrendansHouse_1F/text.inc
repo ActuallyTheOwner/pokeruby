@@ -1,49 +1,46 @@
 LittlerootTown_BrendansHouse_1F_Text_172429:: @ 8172429
-	.string "MOM: See, {PLAYER}?\n"
-	.string "Isn't it nice in here, too?$"
+	.string "See, {PLAYER}?\n"
+	.string "It's very nice in here, I really like it.$"
 
 LittlerootTown_BrendansHouse_1F_Text_172453:: @ 8172453
-	.string "The mover's POKéMON do all the work\n"
-	.string "of moving us in and cleaning up after.\l"
-	.string "This is so convenient!\p"
-	.string "{PLAYER}, your room is upstairs.\n"
-	.string "Go check it out, dear!\p"
-	.string "DAD bought you a new clock to mark\n"
-	.string "our move here.\l"
-	.string "Don't forget to set it!$"
+	.string "My husband also just bought a new clock\n"
+	.string "to mark our move here…\l"
+	.string "Could you be a dear and help set it?\p"
+	.string "My room is just upstairs.\n"
+	.string "It's the first door on the right.$"
 
 LittlerootTown_BrendansHouse_1F_Text_172531:: @ 8172531
-	.string "MOM: Well, {PLAYER}?\p"
-	.string "Aren't you interested in seeing your\n"
-	.string "very own room?$"
+	.string "Dang, {PLAYER}?\p"
+	.string "It seems that I have lost my truck's keys.\n"
+	.string "Could you check my room for me?$"
 
 LittlerootTown_BrendansHouse_1F_Text_172574:: @ 8172574
 LittlerootTown_MaysHouse_1F_Text_172574:: @ 8172574
-	.string "MOM: {PLAYER}.\p"
-	.string "Go set the clock in your room, honey.$"
+	.string "{PLAYER} did you forget?\p"
+	.string "It's the first door on the right!$"
 
 LittlerootTown_BrendansHouse_1F_Text_1725A3:: @ 81725A3
-	.string "MOM: Oh! {PLAYER}, {PLAYER}!\n"
+	.string "Hey! {PLAYER}, {PLAYER}!\n"
 	.string "Quick! Come quickly!$"
 
 LittlerootTown_BrendansHouse_1F_Text_1725C9:: @ 81725C9
 LittlerootTown_MaysHouse_1F_Text_1725C9:: @ 81725C9
-	.string "MOM: Look! It's PETALBURG GYM!\n"
-	.string "Maybe DAD will be on!$"
+	.string "Look! It's PETALBURG GYM!\n"
+	.string "Maybe my husband will be on!$"
 
 LittlerootTown_BrendansHouse_1F_Text_1725FE:: @ 81725FE
 LittlerootTown_MaysHouse_1F_Text_1725FE:: @ 81725FE
-	.string "MOM: Oh... It's over.\p"
-	.string "I think DAD was on, but we missed him.\n"
-	.string "Too bad.$"
+	.string "Oh... It's over.\p"
+	.string "I think PROF. BIRCH was on,\n"
+	.string "but we missed him.$"
 
 LittlerootTown_BrendansHouse_1F_Text_172644:: @ 8172644
 LittlerootTown_MaysHouse_1F_Text_172644:: @ 8172644
-	.string "Oh, yes.\n"
-	.string "One of DAD's friends lives in town.\p"
-	.string "PROF. BIRCH is his name.\p"
-	.string "He lives right next door, so you should\n"
-	.string "go over and introduce yourself.$"
+	.string "Now that I think about it,\n"
+	.string "Is your MOM getting worried?\p"
+	.string "I live right next door to you.\p"
+	.string "Go home and check in with your mom.\n"
+	.string "Tell her I said hi!$"
 
 LittlerootTown_BrendansHouse_1F_Text_1726D2:: @ 81726D2
 	.string "MOM: See you, honey!$"

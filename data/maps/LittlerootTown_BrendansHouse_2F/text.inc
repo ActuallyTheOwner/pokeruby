@@ -3,14 +3,9 @@ LittlerootTown_BrendansHouse_2F_Text_172E18:: @ 8172E18
 	.string "Better set it and start it!$"
 
 LittlerootTown_BrendansHouse_2F_Text_172E4C:: @ 8172E4C
-	.string "MOM: {PLAYER}, how do you like your\n"
-	.string "new room?\p"
-	.string "Good! Everything's put away neatly!\p"
-	.string "They finished moving everything in\n"
-	.string "downstairs, too.\p"
-	.string "POKéMON movers are so convenient!\p"
-	.string "Oh, you should make sure that\n"
-	.string "everything's all there on your desk.$"
+	.string "Everything's put away neatly,\p"
+	.string "{RIVAL} should be coming home.\n"
+	.string "please meet me downstairs.$"
 
 UnknownString_8172F31: @ 8172F31
 	.string "The bookshelf is lined entirely with\n"

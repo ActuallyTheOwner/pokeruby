@@ -1,20 +1,16 @@
 LittlerootTown_Text_16A7C9:: @ 816A7C9
-	.string "MOM: {PLAYER}, we're here, honey!\p"
-	.string "It must be tiring riding with our things\n"
-	.string "in the moving truck.\p"
-	.string "Well, this is LITTLEROOT TOWN.\p"
-	.string "How do you like it?\n"
-	.string "This is our new home!\p"
+	.string "Well, this is LITTLEROOT.\n"
+	.string "How do you like it?\p"
 	.string "It has a quaint feel, but it seems to be\n"
 	.string "an easy place to live, don't you think?\p"
-	.string "And, you get your own room, {PLAYER}!\n"
-	.string "Let's go inside.$"
+	.string "Thanks for helping me move in,\n"
+	.string "let's go inside!$"
 
 LittlerootTown_Text_16A8EE:: @ 816A8EE
-	.string "MOM: Wait, {PLAYER}!$"
+	.string "Wait, {PLAYER}!$"
 
 LittlerootTown_Text_16A8FD:: @ 816A8FD
-	.string "MOM: {PLAYER}! {PLAYER}! Did you\n"
+	.string "{PLAYER}! {PLAYER}! Did you\n"
 	.string "introduce yourself to PROF. BIRCH?\p"
 	.string "Oh! What an adorable POKéMON!\n"
 	.string "You got it from PROF. BIRCH. How nice!\p"
@@ -29,7 +25,7 @@ LittlerootTown_Text_16AA32:: @ 816AA32
 	.string "RUNNING SHOES.$"
 
 LittlerootTown_Text_16AA5C:: @ 816AA5C
-	.string "MOM: {PLAYER}, those shoes came with\n"
+	.string "{PLAYER}, those shoes came with\n"
 	.string "instructions.\p"
 	.string "“Press the B Button while wearing these\n"
 	.string "RUNNING SHOES to run extra-fast!\p"
@@ -91,4 +87,4 @@ LittlerootTown_Text_16AEA1:: @ 816AEA1
 	.string "{PLAYER}'s HOUSE$"
 
 LittlerootTown_Text_16AEAC:: @ 816AEAC
-	.string "PROF. BIRCH'S HOUSE$"
+	.string "{RIVAL}'s HOUSE$"

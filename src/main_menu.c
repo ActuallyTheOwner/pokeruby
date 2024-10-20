@@ -144,10 +144,11 @@ static const union AffineAnimCmd *const gSpriteAffineAnimTable_81E79AC[] =
     gSpriteAffineAnim_81E799C,
 };
 
+//Gender
 static const struct MenuAction gUnknown_081E79B0[] =
 {
-    {gBirchText_Boy, NULL},
     {gBirchText_Girl, NULL},
+    {gBirchText_Boy, NULL},
 };
 
 static const struct MenuAction gMalePresetNames[] =
@@ -764,9 +765,9 @@ static void Task_NewGameSpeech1(u8 taskId)
     gTasks[taskId].func = Task_NewGameSpeech2;
     gTasks[taskId].tTrainerSpriteId = 0xFF;
     gTasks[taskId].data[3] = 0xFF;
-    gTasks[taskId].tFrameCounter = 216;  //Wait 3.6 seconds (216 frames) before starting speech
+    gTasks[taskId].tFrameCounter = 0;  //Wait 3.6 seconds (216 frames) before starting speech
 
-    PlayBGM(MUS_ROUTE122);
+    
 }
 
 static void Task_NewGameSpeech2(u8 taskId)
@@ -802,10 +803,10 @@ static void Task_NewGameSpeech3(u8 taskId)
         }
         else
         {
-            Menu_DrawStdWindowFrame(2, 13, 27, 18);
+            
             //"Hi! Sorry to keep you waiting...
             //...But everyone calls me the POKEMON PROFESSOR."
-            MenuPrintMessage(gBirchSpeech_Welcome, 3, 14);
+            //MenuPrintMessage(gBirchSpeech_Welcome, 3, 14);
             gTasks[taskId].func = Task_NewGameSpeech4;
         }
     }
@@ -817,7 +818,7 @@ static void Task_NewGameSpeech4(u8 taskId)
     {
         gTasks[taskId].func = Task_NewGameSpeech5;
         //"This is what we call a POKEMON."
-        MenuPrintMessage(gBirchSpeech_ThisIsPokemon, 3, 14);
+        //MenuPrintMessage(gBirchSpeech_ThisIsPokemon, 3, 14);
     }
 }
 
@@ -847,7 +848,8 @@ static void Task_NewGameSpeech7(u8 taskId)
         //Go on to next sentence after frame 95
         if (gTasks[taskId].tFrameCounter > 95)
         {
-            Menu_SetText(gSystemText_NewPara);
+            Menu_DrawStdWindowFrame(2, 13, 27, 18);
+           // Menu_SetText(gSystemText_NewPara);
             gTasks[taskId].func = Task_NewGameSpeech8;
         }
     }
@@ -857,7 +859,7 @@ static void Task_NewGameSpeech7(u8 taskId)
         gTasks[taskId].tFrameCounter++;
         //Play Azurill cry at frame 32
         if (gTasks[taskId].tFrameCounter == 32)
-            PlayCry1(SPECIES_AZURILL, 0);
+            PlayCry1(SPECIES_RALTS, 0);
     }
 }
 
@@ -865,6 +867,7 @@ static void Task_NewGameSpeech8(u8 taskId)
 {
     if (BirchSpeechUpdateWindowText())
     {
+        PlayBGM(MUS_FOLLOW_ME);
         //"This world is widely inhabited by POKEMON...
         //...That's what I do."
         MenuPrintMessage(gBirchSpeech_WorldInhabitedByPokemon, 3, 14);
@@ -926,7 +929,7 @@ static void Task_NewGameSpeech12(u8 taskId)
         else
         {
             //Initialize Brendan sprite
-            u8 spriteId = gTasks[taskId].tBrendanSpriteId;
+            u8 spriteId = gTasks[taskId].tMaySpriteId;
 
             gSprites[spriteId].x = 180;
             gSprites[spriteId].y = 60;
@@ -968,6 +971,7 @@ static void Task_NewGameSpeech15(u8 taskId)
 }
 
 //Process gender menu
+//I swapped it!!!!!!!
 static void Task_NewGameSpeech16(u8 taskId)
 {
     u8 cursorPos;
@@ -977,14 +981,14 @@ static void Task_NewGameSpeech16(u8 taskId)
     case MALE:
         Menu_DestroyCursor();
         PlaySE(SE_SELECT);
-        gSaveBlock2.playerGender = MALE;
+        gSaveBlock2.playerGender = FEMALE;
         Menu_EraseWindowRect(2, 4, 8, 9);
         gTasks[taskId].func = Task_NewGameSpeech19;
         break;
     case FEMALE:
         Menu_DestroyCursor();
         PlaySE(SE_SELECT);
-        gSaveBlock2.playerGender = FEMALE;
+        gSaveBlock2.playerGender = MALE;
         Menu_EraseWindowRect(2, 4, 8, 9);
         gTasks[taskId].func = Task_NewGameSpeech19;
         break;
@@ -1017,9 +1021,9 @@ static void Task_NewGameSpeech17(u8 taskId)
 
         //Set up new trainer sprite
         if (gTasks[taskId].tGenderSelection)
-            spriteId = gTasks[taskId].tMaySpriteId;
-        else
             spriteId = gTasks[taskId].tBrendanSpriteId;
+        else
+            spriteId = gTasks[taskId].tMaySpriteId;
         gSprites[spriteId].x = 240;
         gSprites[spriteId].y = 60;
         gSprites[spriteId].invisible = FALSE;
@@ -1132,7 +1136,7 @@ static void Task_NewGameSpeech25(u8 taskId)
     switch (Menu_ProcessInputNoWrap_())
     {
     case 0:     //YES
-        PlaySE(SE_SELECT);
+        PlaySE(SE_SUCCESS);
         Menu_EraseWindowRect(2, 1, 8, 7);
         gSprites[gTasks[taskId].tTrainerSpriteId].oam.objMode = ST_OAM_OBJ_BLEND;
         StartSpriteFadeOut(taskId, 2);
@@ -1141,7 +1145,7 @@ static void Task_NewGameSpeech25(u8 taskId)
         break;
     case -1:    //B button
     case 1:     //NO
-        PlaySE(SE_SELECT);
+        PlaySE(SE_FAILURE);
         Menu_EraseWindowRect(2, 1, 8, 7);
         gTasks[taskId].func = Task_NewGameSpeech14;     //Go back to gender menu
         break;
@@ -1366,14 +1370,15 @@ void CB_ContinueNewGameSpeechPart2()
     Text_LoadWindowTemplate(&gWindowTemplate_81E6C3C);
     InitMenuWindow((struct WindowTemplate *)&gMenuTextWindowTemplate);
 
-    if (gSaveBlock2.playerGender != MALE)
+    //Remember this is swapped
+    if (gSaveBlock2.playerGender == FEMALE)
     {
-        gTasks[taskId].tGenderSelection = FEMALE;
+        gTasks[taskId].tGenderSelection = MALE;
         spriteId = gTasks[taskId].tMaySpriteId;
     }
     else
     {
-        gTasks[taskId].tGenderSelection = MALE;
+        gTasks[taskId].tGenderSelection = FEMALE;
         spriteId = gTasks[taskId].tBrendanSpriteId;
     }
 
@@ -1421,14 +1426,14 @@ void ShrinkPlayerSprite(struct Sprite *sprite)
 u8 CreateAzurillSprite(u8 x, u8 y)
 {
     DecompressPicFromTable_2(
-        &gMonFrontPicTable[SPECIES_AZURILL],
-        gMonFrontPicCoords[SPECIES_AZURILL].coords,
-        gMonFrontPicCoords[SPECIES_AZURILL].y_offset,
+        &gMonFrontPicTable[SPECIES_RALTS],
+        gMonFrontPicCoords[SPECIES_RALTS].coords,
+        gMonFrontPicCoords[SPECIES_RALTS].y_offset,
         gMonSpriteGfx_Sprite_ptr[0],
         gMonSpriteGfx_Sprite_ptr[1],
-        SPECIES_AZURILL);
-    LoadCompressedObjectPalette(&gMonPaletteTable[SPECIES_AZURILL]);
-    GetMonSpriteTemplate_803C56C(SPECIES_AZURILL, 1);
+        SPECIES_RALTS);
+    LoadCompressedObjectPalette(&gMonPaletteTable[SPECIES_RALTS]);
+    GetMonSpriteTemplate_803C56C(SPECIES_RALTS, 1);
     return CreateSprite(&gCreatingSpriteTemplate, x, y, 0);
 }
 

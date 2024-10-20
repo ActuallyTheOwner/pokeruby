@@ -11,14 +11,14 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "direction": "down",
+      "map": "MAP_RUSTBORO_CITY",
       "offset": 0,
-      "map": "MAP_RUSTBORO_CITY"
+      "direction": "down"
     },
     {
-      "direction": "right",
+      "map": "MAP_ROUTE114",
       "offset": -40,
-      "map": "MAP_ROUTE114"
+      "direction": "right"
     }
   ],
   "object_events": [
@@ -240,7 +240,9 @@
       "dest_warp_id": "1"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+
+  ],
   "bg_events": [
     {
       "type": "secret_base",
